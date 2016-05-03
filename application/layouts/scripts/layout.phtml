@@ -1,0 +1,60 @@
+<?php echo $this->doctype() ?>
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/bootstrap.css')); ?> 
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/bootstrap-theme.css')); ?> 
+<?php echo $this->headScript()->prependFile($this->baseUrl('/js/jquery-2.1.3.min.js')); ?> 
+<?php echo $this->headScript()->prependFile($this->baseUrl('/js/bootstrap.js')); ?>
+
+<!--    <link href="tooplate_style.css" rel="stylesheet" type="text/css" />-->
+<?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/tooplate_style.css')); ?> 
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <a class="navbar-brand active" href="<?php echo $this->baseUrl('/index/list'); ?>">RSS</a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="<?php echo $this->baseUrl('/index/add'); ?>">Add RSS</a></li>
+      <li><a href="<?php echo $this->baseUrl('/users/list'); ?>">Users</a></li>
+      <li><a href="<?php echo $this->baseUrl('/users/login'); ?>">Login</a></li>
+      <li><a href="<?php echo $this->baseUrl('/users/registeration'); ?>">Register</a></li>
+      &nbsp;&nbsp;
+      <li><a href="<?php echo $this->baseUrl('/users/logout'); ?>">Logout</a></li>
+    </ul>
+    <div class="navbar-header navbar-right">
+        <p class="navbar-text">
+          <?php $user = Zend_Auth::getInstance(); ?>
+        <a href="#" class="navbar-link">Welcome    <?php 
+        if($user->hasIdentity()) 
+              echo strtoupper($user->getIdentity()->name); 
+            else
+              echo " ";
+        
+
+            ?></a>
+        </p>
+    </div>
+  </div>
+</nav>
+
+<br><br><br>
+
+
+
+    <?php echo $this->layout()->content; ?>
+
+    <div id="tooplate_footer_wrapper">
+
+        <div id="tooplate_footer">
+            <div class="cleaner h40"></div>
+                <h5><center>Copyright © 2016 <a href="<?php echo $this->baseUrl('/index/list'); ?>">Kareem RSS</a></center></h5>
+            <div class="cleaner"></div>
+
+        </div>
+    </div>
+</html>
+

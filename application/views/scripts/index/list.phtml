@@ -1,0 +1,33 @@
+
+
+
+<div class="container" >
+
+                <table class="table table-bordered table-responsive">
+
+    <?php
+    for ($i = 0; $i < count($this->index); $i++) {
+        ?>
+        <tr>
+
+            <td>
+               <a  class="text-danger"> <strong><?php echo $this->index[$i]["url"]; ?></strong></a></
+            </td>
+
+            <td  width='150px'>    
+                <a href="<?php echo $this->baseUrl() ?>/index/show/id/<?php echo $this->index[$i]['id']; ?>" class="btn btn-success btn-lg" > Show </a>
+
+            </td>
+
+            <td  width='150px' >    
+                <a href="<?php echo $this->baseUrl() ?>/index/delete/id/<?php echo $this->index[$i]['id']; ?>" class="btn btn-danger btn-lg" > Delete </a>
+
+            </td>
+
+        </tr>
+        <?php
+    }
+    ?>
+</table>
+
+</div>

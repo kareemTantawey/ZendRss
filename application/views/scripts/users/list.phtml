@@ -1,0 +1,36 @@
+
+
+
+<div class="container" >
+
+                <table class="table table-bordered table-responsive">
+
+    <?php
+    for ($i = 0; $i < count($this->users); $i++) {
+        ?>
+        <tr>
+            <td   width='120px' height='60px'>
+                <img src="../images/<?php echo $this->users[$i]['image']; ?>" class="img-circle"  width="100px" height="50px"/>
+
+            </td>
+            <td>
+                <a  class="text-danger"><strong> <?php echo $this->users[$i]["name"]; ?></strong></a>
+            </td>
+
+            <td  width='150px'>    
+                <a href="<?php echo $this->baseUrl() ?>/users/edit/id/<?php echo $this->users[$i]['id']; ?>" class="btn btn-success btn-lg" > Edit </a>
+
+            </td>
+
+            <td  width='150px' >    
+                <a href="<?php echo $this->baseUrl() ?>/users/delete/id/<?php echo $this->users[$i]['id']; ?>/img/<?php echo $this->users[$i]['image']; ?>" class="btn btn-danger btn-lg" > Delete </a>
+
+            </td>
+
+        </tr>
+        <?php
+    }
+    ?>
+</table>
+
+</div>
